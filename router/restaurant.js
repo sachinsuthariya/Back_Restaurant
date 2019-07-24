@@ -1,18 +1,15 @@
 //imports
-var express = require("express"),
-    passport = require("passport"),
+const express = require("express"),
     router = express.Router();
 
-var restaurant = require("../models/restaurant");
-
+const restaurantController = require("../controller/restaurant.controller");
 
 router.get("/", function (req, res) {
     res.send("hay i m from restaurant router");
 });
 
-router.post("/register", function (req, res) {
-    
-});
+router.post("/register", restaurantController.SignUp);
+router.post("/login", restaurantController.SignIn);
 
 
 module.exports = router;

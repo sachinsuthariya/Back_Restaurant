@@ -1,14 +1,14 @@
 // imports
-var mongoose = require("mongoose"),
+const mongoose = require("mongoose"),
     passportLocalMongoose = require("passport-local-mongoose");
 
 
-var restaurantSchema = new mongoose.Schema({
+const restaurantSchema = new mongoose.Schema({
     ownerName: String,
     restaurantName: String,
     city: String,
     address: String,
-    email: String,
+    username: String,
     password: String
 });
 
