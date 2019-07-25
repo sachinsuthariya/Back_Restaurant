@@ -2,11 +2,12 @@
 const express = require("express"),
     app = express(),
     bodyparser = require("body-parser"),
-    mongoose = require("mongoose"),
     methodOverride = require("method-override"),
     cors = require("cors");
 
-const dbConfig = require("./dbConfig");
+require('dotenv').config();
+
+require("./dbConfig").connection;
 
 const corsOptions = {
     origin: "http://localhost:4200",
@@ -17,17 +18,6 @@ const corsOptions = {
 app.use(methodOverride("_method"));
 app.use(bodyparser.json());
 app.use(cors(corsOptions));
-
-//database connection 
-mongoose
-    .connect(dbConfig.url)
-    .then(() => {
-        console.log("Successfully connected to MongoDB.");
-    })
-    .catch(err => {
-        console.log("Could not connect to MongoDB.");
-        process.exit();
-    });
 
 
 //port 
