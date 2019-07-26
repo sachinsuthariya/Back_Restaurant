@@ -10,6 +10,7 @@ router.get("/", function (req, res) {
 
 router.post("/register", restaurantController.SignUp);
 router.post("/login", restaurantController.SignIn);
+router.get("/getRestaurant", restaurantController.getRestaurant);
 
 
 module.exports = router;

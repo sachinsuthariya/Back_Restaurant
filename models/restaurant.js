@@ -10,7 +10,11 @@ const restaurantSchema = new mongoose.Schema({
     city: String,
     address: String,
     username: String,
-    password: String
+    password: String,
+    isadmin: {
+        type: Boolean,
+        default: false
+    }
 });
 
 restaurantSchema.pre('save', function (next) {
