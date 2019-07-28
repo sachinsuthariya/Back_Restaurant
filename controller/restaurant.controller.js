@@ -69,6 +69,7 @@
 
     exports.SignIn = function (req, res) {
         let loginData = req.body;
+        console.log("login Datatttta", loginData);
 
         restaurantModel.findOne({
             username: loginData.email
