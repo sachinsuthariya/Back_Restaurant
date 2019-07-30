@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 
 require('dotenv').config();
 
-// console.log(process.env.AUTHOR_EMAIL, process.env.AUTHOR_EMAIL_PASSWORD, "in mail fuction");
 exports.Mail = function (toEmail, subject, message) {
     console.log("email", toEmail, "sub", subject, "msg", message, "inside emial function");
 
@@ -29,7 +28,6 @@ exports.Mail = function (toEmail, subject, message) {
         if (error) {
             return error;
         } else {
-            // console.log('Email sent: ' + info.response);
             return info.response;
         }
 

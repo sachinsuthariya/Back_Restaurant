@@ -38,10 +38,9 @@
 
                 let subject = "Welcome to Restaurant Management System";
                 let message = "username: " + restaurant.username + " password: " + password;
-                // console.log("im in registerrrrrrrrrrrrrrrrrrr");
+
                 console.log("tomail", restaurant.username, "sub", subject, "msg", message, "inregister");
 
-                // mailer.Mail(restaurant.username, subject, message);
                 try {
                     mailer.Mail(restaurant.username, subject, message);
                 } catch (err) {

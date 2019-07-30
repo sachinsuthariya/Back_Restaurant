@@ -17,5 +17,6 @@ router.get("/getRestaurant", restaurantController.getRestaurant);
 
 // restaurant branch
 router.post("/addBranch", branchRestaurantController.addBranch);
+router.post("/getBranchList", branchRestaurantController.getBranchList);
 
 module.exports = router;
