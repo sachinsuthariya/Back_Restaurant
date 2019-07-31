@@ -29,11 +29,6 @@ const restaurantRoutes = require("./router/restaurant");
 app.use("/api/restaurant", restaurantRoutes);
 
 
-
-app.get("/", function (req, res) {
-    res.send("Test");
-});
-
 //port listen
 app.listen(PORT, function () {
     console.log("Restaurant server started on:" + PORT);

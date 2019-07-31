@@ -1,7 +1,4 @@
-require('dotenv').config();
-
 const BranchModel = require("../models/branchRestaurant");
-
 
 
 exports.addBranch = function (req, res) {
@@ -41,5 +38,35 @@ exports.getBranchList = function (req, res) {
         });
     })
 
+}
+
+exports.updateBranch = function (req, res) {
+
+    let id = req.body.ID;
+    let updateData = {
+        Parent_Rest: req.body.Parent_Rest,
+        restaurantID: req.body.restaurantID,
+        ownerName: req.body.ownerName,
+        restaurantName: req.body.restaurantName,
+        city: req.body.city,
+        address: req.body.address,
+        email: req.body.email,
+        mobile: req.body.mobile
+    }
+
+    BranchModel.findOneAndUpdate(id, updateData, function (err, updatedBranch) {
+        if (err) {
+            return res.json({
+                success: false,
+                message: "Error in fatching Detail, please try agin",
+                error: err
+            });
+        }
+
+        return res.json({
+            success: true,
+            message: "Branch updated successfully"
+        });
+    });
 
 }
