@@ -8,6 +8,7 @@
 
     const SECRET_KEY = process.env.SECRET_KEY;
 
+
     exports.SignUp = function (req, res) {
 
         const password = "123456";
@@ -68,7 +69,6 @@
 
     exports.SignIn = function (req, res) {
         let loginData = req.body;
-        console.log("login Datatttta", loginData);
 
         restaurantModel.findOne({
             username: loginData.email
@@ -108,7 +108,8 @@
                         message: "Authentication successful",
                         body: [{
                             isadmin: false,
-                            token: token
+                            token: token,
+                            user: restaurant
                         }]
                     });
                 }
@@ -125,7 +126,8 @@
                         message: "Authentication successful",
                         body: [{
                             isadmin: true,
-                            token: token
+                            token: token,
+                            user: restaurant
                         }]
                     });
                 } else {
