@@ -19,6 +19,7 @@
             restaurantName: req.body.resName,
             city: req.body.city,
             address: req.body.address,
+            mobile: req.body.mobile,
             password: password
         });
 
@@ -40,7 +41,6 @@
                 let subject = "Welcome to Restaurant Management System";
                 let message = "username: " + restaurant.username + " password: " + password;
 
-                console.log("tomail", restaurant.username, "sub", subject, "msg", message, "inregister");
 
                 try {
                     mailer.Mail(restaurant.username, subject, message);

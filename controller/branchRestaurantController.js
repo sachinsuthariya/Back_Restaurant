@@ -54,7 +54,7 @@ exports.updateBranch = function (req, res) {
         mobile: req.body.mobile
     }
 
-    BranchModel.findOneAndUpdate(id, updateData, function (err, updatedBranch) {
+    BranchModel.findByIdAndUpdate(id, updateData, function (err, updatedBranch) {
         if (err) {
             return res.json({
                 success: false,

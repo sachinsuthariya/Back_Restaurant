@@ -5,6 +5,8 @@ const express = require("express"),
 const restaurantController = require("../controller/restaurant.controller"),
     branchRestaurantController = require("../controller/branchRestaurantController");
 
+const menuController = require("../controller/menuController");
+
 require("dotenv").config();
 
 const SECRET_KEY = process.env.SECRET_KEY;
@@ -37,5 +39,9 @@ router.get("/getRestaurant", restaurantController.getRestaurant);
 router.post("/addBranch", branchRestaurantController.addBranch);
 router.post("/getBranchList", branchRestaurantController.getBranchList);
 router.put("/updateBranch", branchRestaurantController.updateBranch);
+
+//menu management
+router.post("/addMenu", menuController.AddMenu);
+router.get("/getMenu", menuController.GetMenu);
 
 module.exports = router;
